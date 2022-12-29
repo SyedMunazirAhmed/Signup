@@ -23,14 +23,14 @@ app.post("/signup",(req,res)=>{
     var name = req.body.name;
     var email = req.body.email;
     var pno = req.body.pno;
-    var password = req.body.password
+    var message = req.body.message
 
 
 var data = {
     "name": name,
     "email": email,
     "pno" : pno,
-    "password": password
+    "message": message
 }
 
 db.collection('sign').insertOne(data,(err,collection)=>{
@@ -39,7 +39,7 @@ db.collection('sign').insertOne(data,(err,collection)=>{
         throw err;
     }
     console.log("Inserted successfully")
-    console.log(`${name} ${email} ${pno} ${password}`)
+    console.log(`${name} <br> ${email} ${pno} ${message}`)
 });
 
     return res.redirect('signup.html');
