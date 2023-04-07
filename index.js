@@ -18,7 +18,7 @@ var db = mongoose.connection;
 
 db.on('error',()=>console.log("Error in db connectio"))
 db.once('open',()=>console.log("Connected to the database"))
-app.post("/signup.html",(req,res)=>{
+app.post("/signup",(req,res)=>{
     var firstname = req.body.firstname;
     var lastname = req.body.lastname;
     var email = req.body.email;
@@ -42,7 +42,7 @@ db.collection('sign').insertOne(data,(err,collection)=>{
     
 });
 
-    return res.redirect('index.html');
+    return res.redirect('/signup.html');
 })
 app.get('/',(req,res)=>{
     res.set({'Allow-access-Allow-Origin':'*'})
