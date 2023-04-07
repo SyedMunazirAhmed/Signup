@@ -42,7 +42,7 @@ db.collection('sign').insertOne(data,(err,collection)=>{
     
 });
 
-    return res.redirect('signup.html');
+    return res.redirect('index.html');
 })
 app.get('/',(req,res)=>{
     res.set({'Allow-access-Allow-Origin':'*'})
